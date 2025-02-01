@@ -1,0 +1,28 @@
+/*
+Theme Name: Portx Theme
+Author: Pranto Mollick
+Author URI: https://prantomollick.com
+Description: Responsive theme
+Version: 1.0
+License: GNU General Public License v3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+Text Domain: portx
+*/
+
+.tagcloud a {
+    font-size: inherit !important;
+}
+
+/* Default state for the icon */
+.sidebar__widget.widget_categories ul li a i {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    float: right;
+}
+
+/* Hover state for the icon */
+.sidebar__widget.widget_categories ul li.cat-item:hover a i {
+    opacity: 1;
+    visibility: visible;
+}
