@@ -1,6 +1,4 @@
-<?php 
-get_header();
-?>
+<?php get_header(); ?>
 <section class="postbox__area pt-120 pb-80">
     <div class="container">
         <div class="row">
@@ -33,5 +31,6 @@ get_header();
         </div>
     </div>
 </section>
+
 <?php
 get_footer();

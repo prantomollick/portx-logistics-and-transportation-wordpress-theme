@@ -32,4 +32,7 @@
 echo get_template_part('template/header/header', 'offcanvas'); 
 echo get_template_part('template/header/header', 'search'); 
 echo get_template_part('template/header/header-1');
-?>
+
+if ( function_exists ('portx_breadcrumb') ) {
+    portx_breadcrumb();
+}

@@ -1,6 +1,6 @@
 <?php
     $post_format_gallery = function_exists('get_field') ? get_field('post_format_gallery') : '';
-    if ( is_single() ): 
+    if ( is_single() ) : 
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class('postbox__item format-image mb-50 transition-3'); ?>>
     <div class="postbox__thumb w-img">

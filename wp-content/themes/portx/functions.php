@@ -65,6 +65,7 @@ include_once('inc/template-functions.php');
 include_once('inc/nav-walker.php');
 include_once('inc/portx-widget-list.php');
 include_once('inc/sidebar-recent-post.php');
+include_once('inc/breadcrumb.php');
 
 // 2. Add custom icon to category links
 add_filter('wp_list_categories', function($output) {

@@ -1,4 +1,3 @@
-
 <!-- search popup start -->
 <div class="search__popup z-index-8">
     <div class="container">
@@ -26,7 +25,7 @@
                      </div>
                   </div>
                   <div class="search__form">
-                     <form action="<?php esc_url(home_url('/'))?>">
+                     <form action="<?php echo esc_url(home_url('/')); ?>" method="get">
                         <div class="search__input">
                            <input type="text" placeholder="<?php esc_attr_e('Search here', 'portx'); ?>" value="<?php echo esc_attr(get_search_query());?>" name="<?php esc_attr_e('s', 'portx')?>">
                            <span class="search-focus-border"></span>
