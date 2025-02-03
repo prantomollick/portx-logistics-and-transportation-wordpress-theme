@@ -188,7 +188,7 @@ class Portx_Heading extends Widget_Base {
                 'type' => Controls_Manager::COLOR,
                 'default' => '#223645',
                 'selectors' => [
-                    '{{WRAPPER}} .tp-section-title' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .section-title' => 'color: {{VALUE}}',
                 ],
             ]
         );
@@ -206,7 +206,7 @@ class Portx_Heading extends Widget_Base {
 					'capitalize' => __( 'Capitalize', 'portx-core' ),
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tp-section-title' => 'text-transform: {{VALUE}};',
+					'{{WRAPPER}} .section-title' => 'text-transform: {{VALUE}};',
 				],
 			]
 		);
@@ -229,13 +229,16 @@ class Portx_Heading extends Widget_Base {
 ?>
         <div class="services-section-title z-index pb-50">
             <?php if (!empty($settings['item_sub_title'])) :?>
-            <div class="tp-section__subtitle tp-section__subtitle-before mb-15 p-relative wow fadeInUp   "
-                data-wow-duration=".9s" data-wow-delay=".3s"><?php echo portx_kses($settings['item_sub_title']); ?>
-            </div>
+			<div class="item-title">
+				<div class="tp-section__subtitle tp-section__subtitle-before mb-15 p-relative wow fadeInUp   "
+					data-wow-duration=".9s" data-wow-delay=".3s">
+					<?php echo portx_kses($settings['item_sub_title']); ?>
+				</div>
+			</div>
             <?php endif; ?>
 
             <?php if (!empty($settings['item_title'])) :?>
-            <h2 class="tp-section__title mb-10 wow fadeInUp .item-title   " data-wow-duration=".9s" data-wow-delay=".4s">
+            <h2 class="item-title section-title tp-section__title mb-10 wow fadeInUp .item-title   " data-wow-duration=".9s" data-wow-delay=".4s">
              <?php echo portx_kses($settings['item_title']); ?>
             </h2>
             <?php endif; ?>

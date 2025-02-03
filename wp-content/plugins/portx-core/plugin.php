@@ -107,6 +107,8 @@ class Plugin {
 		require_once( __DIR__ . '/widgets/heading.php' );
 		require_once( __DIR__ . '/widgets/video.php' );
 		require_once( __DIR__ . '/widgets/about.php' );
+		require_once( __DIR__ . '/widgets/counter-box.php' );
+		require_once( __DIR__ . '/widgets/project-list.php' );
 	}
 
 	/**

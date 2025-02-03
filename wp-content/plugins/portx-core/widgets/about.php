@@ -57,7 +57,7 @@ class Portx_About extends Widget_Base {
 	 * @return string Widget icon.
 	 */
 	public function get_icon() {
-		return 'eicon-info-box';
+		return 'eicon-book';
 	}
     
 	/**
@@ -309,7 +309,7 @@ class Portx_About extends Widget_Base {
 		}
         ?>
 
-        <div class="about-area ">
+        <div class="about-area">
             <div class="tp-about__wrap pt-110 pb-60">
                 <div class="container">
                     <div class="row align-items-start">

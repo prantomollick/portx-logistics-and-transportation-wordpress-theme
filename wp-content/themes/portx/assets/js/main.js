@@ -521,36 +521,40 @@
 
     // itCursor();
     // hero-active active
-    if ($(".hero-active").length > 0) {
-        var hero_slider = new Swiper(".hero-active", {
-            slidesPerView: 1,
-            loop: true,
-            autoplay: {
-                delay: 5000,
-            },
-            effect: "fade",
-            centeredSlides: true,
-            navigation: {
-                nextEl: ".hero-button-next",
-                prevEl: ".hero-button-prev",
-            },
-            breakpoints: {
-                991: {},
-                768: {
-                    slidesPerView: 1,
+    function portx_hero1_action() {
+        if ($(".hero-active").length > 0) {
+            var hero_slider = new Swiper(".hero-active", {
+                slidesPerView: 1,
+                loop: true,
+                autoplay: {
+                    delay: 5000,
                 },
-                767: {
-                    slidesPerView: 1,
+                effect: "fade",
+                centeredSlides: true,
+                navigation: {
+                    nextEl: ".hero-button-next",
+                    prevEl: ".hero-button-prev",
                 },
-                576: {
-                    slidesPerView: 1,
+                breakpoints: {
+                    991: {},
+                    768: {
+                        slidesPerView: 1,
+                    },
+                    767: {
+                        slidesPerView: 1,
+                    },
+                    576: {
+                        slidesPerView: 1,
+                    },
+                    0: {
+                        slidesPerView: 1,
+                    },
                 },
-                0: {
-                    slidesPerView: 1,
-                },
-            },
-        });
+            });
+        }
     }
+    portx_hero1_action();
+
     // hero-active active
     if ($(".hero-active-2").length > 0) {
         var hero_slider_2 = new Swiper(".hero-active-2", {
@@ -716,42 +720,47 @@
             },
         },
     });
+
     // project active
-    var project_swiper = new Swiper(".project-active", {
-        // Optional parameters
-        loop: true,
-        slidesPerView: 4,
-        spaceBetween: 0,
-        pagination: {
-            el: ".project-slider-dots",
-            clickable: true,
-        },
-        breakpoints: {
-            1402: {
-                slidesPerView: 4,
-                spaceBetween: 0,
+    function portx_poroject_swiper() {
+        var project_swiper = new Swiper(".project-active", {
+            // Optional parameters
+            loop: true,
+            slidesPerView: 4,
+            spaceBetween: 0,
+            pagination: {
+                el: ".project-slider-dots",
+                clickable: true,
             },
-            1401: {
-                slidesPerView: 3,
-                spaceBetween: 0,
+            breakpoints: {
+                1402: {
+                    slidesPerView: 4,
+                    spaceBetween: 0,
+                },
+                1401: {
+                    slidesPerView: 3,
+                    spaceBetween: 0,
+                },
+                1199: {
+                    slidesPerView: 3,
+                    spaceBetween: 0,
+                },
+                768: {
+                    slidesPerView: 2,
+                },
+                767: {
+                    slidesPerView: 2,
+                    spaceBetween: 0,
+                },
+                0: {
+                    slidesPerView: 1,
+                    spaceBetween: 0,
+                },
             },
-            1199: {
-                slidesPerView: 3,
-                spaceBetween: 0,
-            },
-            768: {
-                slidesPerView: 2,
-            },
-            767: {
-                slidesPerView: 2,
-                spaceBetween: 0,
-            },
-            0: {
-                slidesPerView: 1,
-                spaceBetween: 0,
-            },
-        },
-    });
+        });
+    }
+    portx_poroject_swiper();
+
     // team active
     var team_swiper = new Swiper(".team-active", {
         // Optional parameters
@@ -899,4 +908,17 @@
             imgHeight: 768,
         });
     }
+
+    //Element frontend view
+    $(window).on("elementor/frontend/init", function () {
+        elementorFrontend.hooks.addAction(
+            "frontend/element_ready/portx-hero-slider.default",
+            portx_hero1_action
+        );
+
+        elementorFrontend.hooks.addAction(
+            "frontend/element_ready/portx-project-list.default",
+            portx_poroject_swiper
+        );
+    });
 })(jQuery);
