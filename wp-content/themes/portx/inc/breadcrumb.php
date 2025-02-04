@@ -48,8 +48,27 @@ function portx_breadcrumb() {
 
     } elseif ( is_archive() ) {
         //Archive pages 
-        $title = get_the_archive_title();
+        if (is_post_type_archive( 'service' )) {
+            $title = get_theme_mod('breadcrumb_service_title', esc_html__('Services', 'portx'));
+        } elseif ( is_category() ) {
+            $title = single_cat_title('', false);
+        } elseif ( is_tag() ) {
+            $title = single_tag_title('', false);
+        } elseif ( is_author() ) {
+            $title = get_the_author();
+        } elseif ( is_date() ) {
+            if ( is_day() ) {
+                $title = get_the_date();
+            } elseif ( is_month() ) {
+                $title = get_the_date('F Y');
+            } elseif ( is_year() ) {
+                $title = get_the_date('Y');
+            } else {
+                $title = esc_html__('Archives', 'portx');
+            }
+        }
 
+        // $title = get_the_archive_title();
     } else {
         // Fallback: use the current page title
         $title = get_the_title();
@@ -62,7 +81,7 @@ function portx_breadcrumb() {
     
     
     // Get the background image URL from theme customizer or page custom field.
-    if (is_home() || is_category() || is_tag() || is_author() || is_date() || is_singular('post')) {
+    if (is_home() || is_category() || is_tag() || is_author() || is_date() || is_singular('post') || is_post_type_archive( 'service' )) {
         $page_breadcrumb_image = function_exists( 'get_field' ) ? get_field( 'breadcrumb_image', $blog_page_id ) : null;
         $breadcrumb_hide = get_field('is_breadcrumb_hide', $blog_page_id);
     } else {

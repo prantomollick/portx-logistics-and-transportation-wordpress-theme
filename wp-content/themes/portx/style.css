@@ -26,3 +26,51 @@ Text Domain: portx
     opacity: 1;
     visibility: visible;
 }
+
+.shop__result .woocommerce-result-count {
+    margin-bottom: 0px;
+}
+
+.shop__sort-select .woocommerce-ordering {
+    margin-bottom: 0px;
+}
+
+/* Style for the select element */
+.woocommerce-ordering .orderby {
+    appearance: none; /* Remove default styling */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: #ffffff; /* Background color */
+    border: solid 1px #e8e8e8; /* Border styling */
+    padding: 10px 40px 10px 15px; /* Padding inside the select box */
+    font-size: 16px; /* Font size */
+    color: #333333; /* Text color */
+    border-radius: 5px; /* Rounded corners */
+    width: 250px; /* Width of the select box */
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg width='14' height='10' viewBox='0 0 14 10' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l6 6 6-6' stroke='%23333333' stroke-width='2' fill='none' fill-rule='evenodd'/%3E%3C/svg%3E"); /* Custom arrow icon */
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 14px 10px;
+    cursor: pointer; /* Cursor change on hover */
+}
+
+/* Remove default arrow in Internet Explorer */
+.orderby::-ms-expand {
+    display: none;
+}
+
+/* Hover effect */
+.orderby:hover {
+    border-color: #cecdcd;
+}
+
+/* Focus effect */
+.orderby:focus {
+    outline: none;
+    border-color: #cecdcd;
+}
+
+/* Style for the options (not all browsers support this) */
+.orderby option {
+    padding: 10px;
+}

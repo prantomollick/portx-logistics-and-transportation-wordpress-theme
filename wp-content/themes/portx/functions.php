@@ -15,6 +15,9 @@ if (!function_exists('portx_setup')) :
 
         // Enable support for Post Thumbnails on posts and pages.
         add_theme_support('post-thumbnails');
+        add_image_size( 'service-thumb', 370, 260, true );
+        add_image_size( 'product-thumb', 270, 320, true );
+        
 
         // This theme uses wp_nav_menu() in one location.
         register_nav_menus(array(
@@ -42,6 +45,14 @@ if (!function_exists('portx_setup')) :
             'default-color' => 'ffffff',
             'default-image' => '',
         )));
+
+        // add woo commerce support
+        add_theme_support( 'woocommerce' );
+
+        //remove woo commerce default style
+        add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
+        
+
         // Add theme support for selective refresh for widgets.
         add_theme_support('customize-selective-refresh-widgets');
 
@@ -66,11 +77,18 @@ include_once('inc/nav-walker.php');
 include_once('inc/portx-widget-list.php');
 include_once('inc/sidebar-recent-post.php');
 include_once('inc/breadcrumb.php');
+include_once('inc/woocommerce-functions.php');
+
+
 
 // 2. Add custom icon to category links
-add_filter('wp_list_categories', function($output) {
-    $output = str_replace('</a>', ' <i class="fa-sharp fa-regular fa-arrow-right"></i></a>', $output);
-    return $output;
-});
+if ( ! function_exists( 'portx_cat_add_icon' ) ) {
+    function portx_cat_add_icon($output) {
+        $output = str_replace('</a>', ' <i class="fa-sharp fa-regular fa-arrow-right"></i></a>', $output);
+        return $output;
+    }
+    add_filter('wp_list_categories',  'portx_cat_add_icon');
+}
+
 
 

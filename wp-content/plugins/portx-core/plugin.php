@@ -109,6 +109,10 @@ class Plugin {
 		require_once( __DIR__ . '/widgets/about.php' );
 		require_once( __DIR__ . '/widgets/counter-box.php' );
 		require_once( __DIR__ . '/widgets/project-list.php' );
+		require_once( __DIR__ . '/widgets/service-post.php' );
+		require_once( __DIR__ . '/widgets/request-quote.php' );
+		require_once( __DIR__ . '/widgets/contact-form.php' );
+
 	}
 
 	/**
