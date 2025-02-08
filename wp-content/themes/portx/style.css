@@ -74,3 +74,27 @@ Text Domain: portx
 .orderby option {
     padding: 10px;
 }
+
+.woosw-icon-5::before {
+    font-size: 18px;
+}
+
+.wishlist-wrap__btn.product-action-btn .product-action-tooltip {
+    top: 15%;
+}
+
+/*Add to Cart product grid*/
+.product-add-cart-btn.cart-button.added {
+    display: none;
+}
+
+.added_to_cart.wc-forward {
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--tp-common-white);
+    background-color: var(--tp-common-black);
+    display: inline-block;
+    padding: 7px 25px;
+    text-align: center;
+    width: 100%;
+}
